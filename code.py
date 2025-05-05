@@ -19,7 +19,7 @@ from rasterio.windows import Window
 
 # Define SAR image paths
 sar_image_paths = [
-   // 
+    #relative paths of all the images like relative_path/2020.tif and so on..
 ]
 
 results = {}
@@ -289,8 +289,8 @@ plt.show()
 if net_final_image is None or net_final_image.size == 0:
     print("Error: net_final_image is empty or None!")
 else:
-    output_path = r"C:\Users\MSI\MiniProject\Tif Images\final_flood_impact.tif"
-    reprojected_path = r"C:\Users\MSI\MiniProject\Tif Images\final_flood_impact_wgs84.tif"
+    output_path ="" # output path to save final flood impact tif
+    reprojected_path ="" # output path to save final flood impact wgs84 tif
 
     print("net_final_image shape:", net_final_image.shape)
     print("Unique values in net_final_image:", np.unique(net_final_image))
@@ -353,8 +353,8 @@ else:
                     )
 
         print(f"Reprojected GeoTIFF successfully saved at: {reprojected_path}")
-        input_path = r"C:\Users\MSI\MiniProject\Tif Images\final_flood_impact_wgs84.tif"
-        output_rgb_path = r"C:\Users\MSI\MiniProject\Tif Images\final_flood_impact_rgb.tif"
+        input_path ="" # input path to read final flood impact wgs84 tif
+        output_rgb_path = ""# output path to save final flood impact rgb tif
 
         value_to_color = {
             0: (0, 0, 255),        # Blue
