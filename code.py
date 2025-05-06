@@ -237,7 +237,19 @@ resized_classified_images = [
 net_final_image = np.sum(resized_classified_images, axis=0)
 
 
+num_images = len(resized_classified_images)
 
+plt.figure(figsize=(5 * num_images, 5)) 
+
+for i, img in enumerate(resized_classified_images):
+    year = os.path.basename(sar_image_paths[i]).split('_')[0]
+    plt.subplot(1, num_images, i + 1)
+    plt.imshow(img, cmap='gray', vmin=0, vmax=1)
+    plt.title(f"Flood Mask {year}")
+    plt.axis('off')
+
+plt.tight_layout()
+plt.show()
 
 
 fig, axes = plt.subplots(1, len(sar_image_paths), figsize=(len(sar_image_paths) * 5, 5))
